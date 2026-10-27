@@ -1,0 +1,59 @@
+{
+ "chess_item_1_01_e_a": {
+  "id": "chess_item_1_01_e_a",
+  "baseId": "chess_item_1_01_e_a",
+  "goldenId": "chess_item_1_01_e_b",
+  "isGolden": false,
+  "trapId": "trap_1041_acarm041",
+  "iconId": "trap_1041_acarm041",
+  "identifier": 267,
+  "name": "维式重锤",
+  "itemType": "EQUIP",
+  "tier": 1,
+  "shopSortId": 1,
+  "price": 1,
+  "hideInShop": false,
+  "shopExcluded": false,
+  "shopExcludedBy": null,
+  "mergeable": true,
+  "upgradeNum": 2,
+  "upgradeChessId": "chess_item_1_01_e_b",
+  "duration": -1,
+  "giveBondId": "victoriaShip",
+  "givePowerId": null,
+  "canGiveBond": false,
+  "requiresBondId": null,
+  "effectId": "eff_acarm041",
+  "effectName": "维式重锤",
+  "desc": "攻击力+15%（这一条来自工坊内容包 STRONG-HOLD-DIY）",
+  "descRaw": "攻击力<@ba.vup>+15%</>",
+  "buffs": [
+   {
+    "key": "env_gbuff_new_with_verify",
+    "countType": "NONE",
+    "bb": {
+     "atk": 0.15
+    },
+    "bbStr": {
+     "key": "attr_common_global_buff"
+    }
+   }
+  ],
+  "params": {
+   "atk": 0.15,
+   "key": "attr_common_global_buff"
+  },
+  "category": "STAT",
+  "kind": "passive",
+  "family": null,
+  "implFormula": "ATK% += atk (additive with other ATK% buffs)",
+  "note": null,
+  "rangeGrid": [
+   [
+    0,
+    0
+   ]
+  ],
+  "flavor": "一柄曾在维多利亚的工厂内铸造和平的重锤。\n“用同样的铁与火，去终结那场战争。”"
+ }
+}
