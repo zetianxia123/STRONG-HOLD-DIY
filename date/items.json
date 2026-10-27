@@ -1,9 +1,0 @@
-{
-  "id": "my-first-pack",
-  "name": "我的第一个包",
-  "version": "1.0.0",
-  "author": "zetianxia123",
-  "minGameVersion": "0.3.2",
-  "data": ["items"],
-  "assets": { "release": null }
-}
