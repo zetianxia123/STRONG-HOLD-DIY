@@ -4,6 +4,6 @@
   "version": "1.0.0",
   "author": "zetianxia123",
   "minGameVersion": "0.3.2",
-  "data": ["items"],
+  "data": ["items","bonds"],
   "assets": { "release": null }
 }
