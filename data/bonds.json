@@ -1,0 +1,154 @@
+{
+  "victoriaShip": {
+    "bondId": "victoriaShip",
+    "name": "维多利亚",
+    "identifier": 3,
+    "isCore": true,
+    "bondType": "SEASON",
+    "bondOrder": 2,
+    "powerIdList": [
+      "victoria",
+      "glasgow"
+    ],
+    "iconId": "icon_victoriaShip",
+    "activeCount": 3,
+    "thresholds": [
+      3,
+      6
+    ],
+    "maxCount": null,
+    "thresholdTemplate": "count_threshold_upward",
+    "countMode": "BOARD",
+    "countsHand": false,
+    "countsGoldenOnly": false,
+    "activeType": "BATTLE",
+    "isActiveInDeck": false,
+    "noStack": false,
+    "weight": 10,
+    "maxInactiveBondCount": -1,
+    "layerMilestones": [
+      {
+        "layer": 25,
+        "mode": "every",
+        "effect": "bond_layer_added_reward_equip"
+      }
+    ],
+    "desc": "携带装备的【维多利亚】干员造成的伤害提升（受层数影响）\n<每叠加25层>获得1件带有随机效果的维式重锤\n<在场6名不同【维多利亚】干员>携带装备的【维多利亚】干员攻击力提升，携带进阶装备时额外提升",
+    "descRaw": "携带装备的【维多利亚】干员造成的<@ba.vup>伤害提升</><@autochess.gray>（受层数影响）</>\n<每叠加<@autochess.dgreen>25</>层>获得1件带有随机效果的<@ba.vup>维式重锤</>\n<在场<@autochess.dgreen>6</>名不同【维多利亚】干员>携带装备的【维多利亚】干员<@ba.vup>攻击力</>提升，携带进阶装备时额外提升",
+    "effectId": "bondeffect_victoria",
+    "effectName": "维多利亚",
+    "effectDesc": "携带装备的【维多利亚】干员伤害提升至{0:0%}（受层数影响）\n<每叠加25层>获得一件带有随机特殊效果的维式重锤\n<在场6名不同【维多利亚】干员>【维多利亚】干员每携带1件装备攻击力+50%，携带进阶装备改为+80%",
+    "effectDescRaw": "<@ba.vup>携带装备</>的【维多利亚】干员伤害提升至<@ba.vup>{0:0%}</><@ba.acrem>（受层数影响）</>\n<每叠加<@ba.vup>25</>层>获得一件带有随机特殊效果的维式重锤\n<在场<@ba.vup>6</>名不同【维多利亚】干员>【维多利亚】干员每携带1件装备攻击力<@ba.vup>+50%</>，携带进阶装备改为<@ba.vup>+80%</>",
+    "effectDescParams": [
+      {
+        "index": 0,
+        "format": "0%",
+        "base": "base_damage_scale",
+        "perStack": "damage_scale_per_stack"
+      }
+    ],
+    "bb": {
+      "damage_scale_per_stack": 0.008,
+      "base_damage_scale": 1.25,
+      "power_bond_char_cnt": 6,
+      "atk_normal_equip": 0.5,
+      "atk_golden_equip": 0.3,
+      "layer": 25,
+      "count": 1
+    },
+    "bbStr": {
+      "key": "act1autochess_bond_eff_victoria",
+      "pool": "pool_equip_vict"
+    },
+    "buffs": [
+      {
+        "key": "env_gbuff_new",
+        "bb": {
+          "damage_scale_per_stack": 0.008,
+          "base_damage_scale": 1.25,
+          "power_bond_char_cnt": 6,
+          "atk_normal_equip": 0.5,
+          "atk_golden_equip": 0.3
+        },
+        "bbStr": {
+          "key": "act1autochess_bond_eff_victoria"
+        }
+      },
+      {
+        "key": "bond_layer_added_reward_equip",
+        "bb": {
+          "layer": 25,
+          "count": 1
+        },
+        "bbStr": {
+          "pool": "pool_equip_vict"
+        }
+      }
+    ],
+    "baseParams": [
+      "base_damage_scale"
+    ],
+    "perStackParams": [
+      "damage_scale_per_stack"
+    ],
+    "members": [
+      "chess_char_1_06_a",
+      "chess_char_2_05_a",
+      "chess_char_2_10_a",
+      "chess_char_3_08_a",
+      "chess_char_4_07_a",
+      "chess_char_4_11_a",
+      "chess_char_5_03_a",
+      "chess_char_5_08_a",
+      "chess_char_6_07_a",
+      "chess_char_6_08_a"
+    ],
+    "visibleMembers": [
+      "chess_char_1_06_a",
+      "chess_char_2_05_a",
+      "chess_char_2_10_a",
+      "chess_char_3_08_a",
+      "chess_char_4_07_a",
+      "chess_char_4_11_a",
+      "chess_char_5_03_a",
+      "chess_char_5_08_a",
+      "chess_char_6_07_a",
+      "chess_char_6_08_a"
+    ],
+    "spec": {
+      "tiers": [
+        {
+          "need": "3 distinct",
+          "effect": "维多利亚 members that carry >= 1 equipment: all damage dealt x(1.25 + 0.008*L)."
+        },
+        {
+          "need": "every 25 layers (cumulative)",
+          "effect": "Gain 1 维式重锤 with a random special effect (pool_equip_vict)."
+        },
+        {
+          "need": "6 distinct",
+          "effect": "维多利亚 members: ATK +50% per equipped item; an advanced (进阶/golden) item gives +80% instead (atk_normal_equip 0.5 + atk_golden_equip 0.3)."
+        }
+      ],
+      "formulas": {
+        "damageMultiplier": "1.25 + 0.008*L (only if carrying equipment)",
+        "hammerPayouts": "floor(L/25)",
+        "atkPerItem(6)": "0.5 normal, 0.8 advanced"
+      },
+      "caps": "none",
+      "layerGain": "休整期结束: 薄绿 +2 per distinct tier of 维多利亚 on board, 维娜·维多利亚 +3 per distinct tier (and 奇迹 +2 per distinct tier of 奇迹), 刺玫 +1, 号角 +2 per distinct-tier operator of the highest-layer bond; in battle: 风笛 first 3 kills +2 维多利亚/远见/不屈; 烛煌 获得时 +5; 机变 \"风笛的盟誓\" +8. Strategy 哈洛德: from round 4 gain 1 维多利亚 operator every 2 rounds.",
+      "howToPlay": "Field 维多利亚 of as many different tiers as possible (T1..T6) for 薄绿/维娜; hand all equipment (incl. free hammers) to 维多利亚 carries; 蒸汽之心 copies all hammer effects.",
+      "assumed": [
+        "pool_equip_vict = uniform random among 灼燃/坚固/加速/战栗维式重锤 (normal grade)",
+        "hammer payout also counts layers added while the bond is inactive"
+      ]
+    },
+    "layerEffect": {
+      "scope": "members",
+      "stat": "atkPct",
+      "perLayer": 0.03,
+      "maxLayers": 20,
+      "cap": 0.6
+    }
+  }
+}
